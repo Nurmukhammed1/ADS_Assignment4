@@ -1,15 +1,10 @@
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class Vertex<V> {
     private V data;
     private Map<Vertex<V>, Double> adjacentVertices = new HashMap<>();
 
     public Vertex(V data) {
-        this.data = data;
-    }
-
-    public void setData (V data) {
         this.data = data;
     }
 
@@ -23,9 +18,5 @@ public class Vertex<V> {
 
     public Map<Vertex<V>, Double> getAdjacentVertices() {
         return adjacentVertices;
-    }
-
-    public Iterable<V> getAdjacentVerticesData(Vertex<V> destination) {
-        return adjacentVertices.keySet().stream().map(Vertex::getData)::iterator;
     }
 }

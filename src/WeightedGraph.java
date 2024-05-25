@@ -1,5 +1,4 @@
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class WeightedGraph<V> {
     private Map<V, Vertex<V>> vertices = new HashMap<>();
