@@ -11,22 +11,16 @@ public class Main {
 
         System.out.println("--------------------------------");
 
-        MyGraph<String> graph = new MyGraph<>(true);
+        WeightedGraph<String> graph = new WeightedGraph<>();
         fillWithoutWeights(graph);
-
-        System.out.println("DFS:");
-        Search<String> dfs = new DepthFirstSearch<>(graph, "Almaty");
-        outputPath(dfs, "Kyzylorda");
-
-        System.out.println("--------------------------------");
 
         System.out.println("BFS:");
         Search<String> bfs = new BreadthFirstSearch<>(graph, "Almaty");
         outputPath(bfs, "Kyzylorda");
     }
 
-    public static void fillWithoutWeights(MyGraph<String> graph) {
-        graph.addEdge("Almaty", "Astana"); // 16 - 19
+    public static void fillWithoutWeights(WeightedGraph<String> graph) {
+        graph.addEdge("Almaty", "Astana" ); // 16 - 19
         graph.addEdge("Shymkent", "Atyrau");
         graph.addEdge("Atyrau", "Astana");
         graph.addEdge("Almaty", "Shymkent");
@@ -46,7 +40,7 @@ public class Main {
     }
 
     public static void outputPath(Search<String> search, String key) {
-        for (String v : search.pathTo(key)) {
+        for (String v : search.getPathTo(key)) {
             System.out.print(v + " -> ");
         }
 
